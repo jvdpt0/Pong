@@ -29,7 +29,12 @@ while game_is_on:
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce_y()
 
-    if ball.distance(paddle2) < 50 and ball.xcor() > 340 or ball.distance(paddle1) < 50 and ball.xcor() < -340:
+    if ball.distance(paddle2) < 50 and ball.xcor() > 320 or ball.distance(paddle1) < 50 and ball.xcor() < -320:
         ball.bounce_x()
 
+    if ball.xcor() > 385:
+        ball.set_center()
+        
+    if ball.xcor() < -385:
+        ball.set_center()
 screen.exitonclick()
