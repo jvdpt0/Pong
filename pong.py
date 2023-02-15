@@ -2,6 +2,7 @@ import time
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 
 
 screen = Screen()
@@ -12,6 +13,7 @@ screen.title('Pong Game')
 paddle1 = Paddle((-350,0))
 paddle2 = Paddle((350,0))
 ball = Ball()
+scoreboard = Scoreboard()
 
 
 screen.listen()
@@ -34,7 +36,9 @@ while game_is_on:
 
     if ball.xcor() > 385:
         ball.set_center()
+        scoreboard.l_point()
         
     if ball.xcor() < -385:
         ball.set_center()
+        scoreboard.r_point()
 screen.exitonclick()
